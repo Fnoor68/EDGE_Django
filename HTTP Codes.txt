@@ -1,0 +1,56 @@
+HTTP Method:
+Get: Retreive/ fatch
+Post: Sending Data
+Put: Update Data
+Delete: 
+Patch: Update Data
+django-admin startproject mysite
+
+Product create: POST /api/v1/products
+Authentication: Basic / Bearer
+Body: {
+	"id". "name", "price", 	
+
+		}
+Response: 200-> OK
+	400 -> Bad request
+	401-> Unauthentification
+	500 -> Server Error
+
+GET all Product: GET /api/v1/products
+Authentication: Basic / Bearer token
+Body: None
+Response:
+body-> {list of product}
+code-> 200 Ok
+	401 Unauthorization
+	500 Server error
+
+GET all Product: GET /api/v1/products/{id}
+Authentication: Basic / Bearer token
+Body: None
+Response:
+body-> {'id':5}
+code-> 200 Ok
+	401 Unauthorization
+	500 Server error
+	404 Not found
+
+Update: PUT /api/v1/products/{id}
+Authentication: Basic / Bearer token
+Body: PUT-> Full obj, PATCH-> Partial Object
+code-> 200 Ok
+	401 Unauthorization
+	500 Server error
+	404 Not Found
+	400 Bad request
+
+
+Delete Product: PUT /api/v1/products/{id}
+Authentication: Basic / Bearer token
+Body: Deleted obj json/ empty
+code-> 200 Ok
+	401 Unauthorization
+	500 Server error
+	404 Not Found
+	
